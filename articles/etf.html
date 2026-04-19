@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETFs & Portfolio Strategy — Dhirren Viswanathan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #f5f0e8; --ink: #0f0d0a; --ink-muted: #4a4540; --ink-faint: #8a847a; --gold: #b8860b; --rule: #d8d0c4; --transition: 0.2s ease; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 0 40px; height: 56px; border-bottom: 1px solid var(--rule); background: var(--cream); position: sticky; top: 0; z-index: 100; }
+    .nav-name { font-size: 14px; font-weight: 500; letter-spacing: 0.02em; }
+    .nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; transition: color var(--transition); }
+    .nav-links a:hover { color: var(--ink); }
+    .article-page { max-width: 680px; margin: 0 auto; padding: 60px 40px 100px; }
+    .article-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 16px; }
+    .article-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 24px; }
+    .article-rule { height: 1px; background: var(--rule); margin: 32px 0; }
+    .article-body p { font-size: 16px; line-height: 1.85; color: #2a2520; margin-bottom: 24px; font-weight: 300; }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); margin: 40px 0 16px; }
+    .article-body strong { font-weight: 500; color: var(--ink); }
+    .footer { display: flex; justify-content: space-between; align-items: center; padding: 24px 40px; border-top: 1px solid var(--rule); font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-faint); letter-spacing: 0.04em; }
+    @media (max-width: 700px) { .navbar { padding: 0 20px; } .article-page { padding: 40px 20px 60px; } .footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px; } }
+	.article-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  margin-bottom: 0;
+}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <span class="nav-name">Dhirren Viswanathan</span>
+  <div class="nav-links">
+    <a href="../index.html">← Back to all analysis</a>
+  </div>
+</nav>
+
+<div class="article-page">
+
+  <p class="article-eyebrow">Instruments</p>
+  <h1 class="article-title">ETFs & Portfolio Strategy</h1>
+  <p class="article-meta">18/02/2026 · 7 min read</p>
+  <div class="article-rule"></div>
+
+  <div class="article-body">
+
+    <p>Ok next i wanna talk about ETFs. you guys have probably seen the word ETF on like 50 different instagram ads. ETF stands for Exchange Traded Fund so if we break that down, exchange traded means it can be bought or sold on a regular stock exchange like the Nasdaq. Fund means its an investment vehicle that pools investor money to invest in a diversified portfolio. So you could think of it as a mini company that takes your money and invests it into something. Usually ETFs consist of many different smaller companies. For example the $SPY ETF consists of all the companies in the S&P500 (top 500 companies in USA sorted by market cap). Just to understand it, we could say the company that made $SPY went out and bought shares of all the top 500 companies, so by buying shares of this new company we can indirectly get access to those 500 companies without having to actually physically buy shares of 500 different companies. It represents a really easy way to diversify your portfolio, which is very important.</p>
+
+    <p>Diversification means investing in different companies from different sectors, like having both nvidia and Walmart in your portfolio. Then, if for some reason china decides to restrict chip sales to USA, nvidia stock would probably fall but Walmart wouldn't be as affected. so your port is less volatile and not as vulnerable to political instability which is rife these days.</p>
+
+    <p>ETFs have also been really popular because of the ease of access. They usually charge really low fees because unlike traditional asset managers that select individual stocks trying to beat the market, they just track an index like the S&P500 which outperforms individual stock picking most of the time. The thing is, majority of short term price movement of individual stocks is completely random and unpredictable. But if you look at it in the long term with discrete sectors in mind, the patterns start to become obvious and predictable, which means you can take advantage of them.</p>
+
+    <h2>The overlap problem</h2>
+
+    <p>ETF investors are usually older and more risk averse, looking for steady reliable gains rather than huge wins or losses. The main exception is LETF which will be mentioned after this, but overall ETFs provide stable gains over a long period. Kinda like a set-and-forget type thing where you buy it now and check back in 10 years and it would've exploded. So picking ETFs is also really important and i see a lot of people getting it wrong. The entire point of ETFs is to diversify assets so you are not as prone to volatility. This means the main consideration when picking ETFs to buy is overlap. Lets say you buy $SPY which is the S&P500, but you also buy $QQQ which is the Nasdaq-100. On the surface this looks like an okay portfolio, but if you look at what $SPY consists of (mostly large tech companies like google or Microsoft) and compare it to $QQQ (also mostly large tech companies) you will realise that they overlap a lot. This negates the entire diversification effect because you are basically investing in the same thing twice. Instead you should pick an ETF that tracks a different sector like energy or mining. there are even ETF overlap tools like this one https://www.etfrc.com/funds/overlap.php</p>
+
+    <h2>ETF strategies</h2>
+
+    <p>when doing ETF investing, the most common strategy is core portfolio building. This means picking a broad market ETF like $VTI (entire stock market) and holding it for years or DCA-ing. DCA means dollar cost average, so its just continuously buying shares at regular intervals for a long time. Another strategy is a sector bet, so for example if you think this year space companies are gonna do really well you can buy a space ETF like $UFO to bet on the space sector outperforming. The last way is short term trading through LETFs.</p>
+
+    <h2>LETFs and volatility decay</h2>
+
+    <p>LETFs (leveraged ETFs) are just what the name describes, ETFs but leveraged. They aim to deliver multiplied performance of the underlying stock on that day. for example $AAPU is a 2x leveraged long apple etf, if the actual apple stock gained 1% today then $AAPU will gain 2%, and if apple falls 4% then $AAPU will fall 8%.</p>
+
+    <p>The problem here is the word DAILY. The LETF will reset daily and only take into account daily changes of the underlying rather than long term movements. So this means if the underlying fluctuates a lot and doesn't have major moves up or down (i.e. volatile) the LETF may actually fall. This is known as volatility decay, and it is especially dangerous if you hold a LETF long-term because you may lose money even if the underlying rises. Experienced traders will mainly trade LETFs for short term intraday (close the position before the day ends) bets or to hedge their positions.</p>
+
+    <p>ETFs are still a really good investment vehicle especially for unexperienced investors and they can replicate or even outperform experienced investors. Just be careful of overlap, DCA if possible, and you should be set for the next 20 years.</p>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <span>Dhirren Viswanathan · 2026</span>
+  <span>Views are my own. Not financial advice.</span>
+</footer>
+</body>
+</html>

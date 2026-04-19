@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Short Selling Explained — Dhirren Viswanathan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #f5f0e8; --ink: #0f0d0a; --ink-muted: #4a4540; --ink-faint: #8a847a; --gold: #b8860b; --rule: #d8d0c4; --transition: 0.2s ease; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 0 40px; height: 56px; border-bottom: 1px solid var(--rule); background: var(--cream); position: sticky; top: 0; z-index: 100; }
+    .nav-name { font-size: 14px; font-weight: 500; letter-spacing: 0.02em; }
+    .nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; transition: color var(--transition); }
+    .nav-links a:hover { color: var(--ink); }
+    .article-page { max-width: 680px; margin: 0 auto; padding: 60px 40px 100px; }
+    .article-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 16px; }
+    .article-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 24px; }
+    .article-rule { height: 1px; background: var(--rule); margin: 32px 0; }
+    .article-body p { font-size: 16px; line-height: 1.85; color: #2a2520; margin-bottom: 24px; font-weight: 300; }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); margin: 40px 0 16px; }
+    .article-body strong { font-weight: 500; color: var(--ink); }
+    .footer { display: flex; justify-content: space-between; align-items: center; padding: 24px 40px; border-top: 1px solid var(--rule); font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-faint); letter-spacing: 0.04em; }
+    @media (max-width: 700px) { .navbar { padding: 0 20px; } .article-page { padding: 40px 20px 60px; } .footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px; } }
+	.article-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  margin-bottom: 0;
+}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <span class="nav-name">Dhirren Viswanathan</span>
+  <div class="nav-links">
+    <a href="../index.html">← Back to all analysis</a>
+  </div>
+</nav>
+
+<div class="article-page">
+
+  <p class="article-eyebrow">Mechanics</p>
+  <h1 class="article-title">Short Selling Explained</h1>
+  <p class="article-meta">10/02/2026 · 7 min read</p>
+  <div class="article-rule"></div>
+
+  <div class="article-body">
+
+    <p>Right after i came back from jungle i opened webull to see red everywhere. Turns out this was because of a lot of things like interest rates, recession fears, and geopolitical uncertainty. But i want to highlight the absolute BAG that hedge funds made off of shorting software stocks. According to data from s3 partners, hedge funds made 24 billion (WITH A B) by betting on software stocks going down. The rationale was they focused on software stocks that are easily replaceable by ai like the ones that provide basic automation services for clients. Main evidence is $IGV, which is an ETF that tracks software stocks. Basically a stock that combines a bunch of different software stocks into one financial vehicle that you can invest in.</p>
+
+    <h2>How shorting works</h2>
+
+    <p>So how exactly did the hedge funds make money off of a stock going down? Basically when you speculate on the price of a stock you can bet on it going up or down. Betting on it going up is called going long, and all you have to do is buy low sell high. But betting on it going down is kinda complicated. You need to LEND the stock. So lets say I own 1 share of dih company and its currently at $100, but my friend thinks that DC is going to drop very soon. He tells me yo bro lemme borrow ur share and ill return it later. So i lend him my share, which he sells at $100. But he still owes me 1 share, so when DC drops to $75, he buys one share and returns it back to me. But he sold at 100 and bought at 75, so he gets to keep the 25$ profit. Thats the essential concept of going short (shorting) a stock. Theres many different ways to bet on a drop like naked shorting, covered calls etc but this is the main way and the easiest to understand.</p>
+
+    <h2>The short squeeze</h2>
+
+    <p>But now you might be wondering, if you can make money when a stock drops AND when a stock goes up, why doesnt everyone do it and make billions of dollars? First off you dont know when its going up or down, and second there is a risk of a short squeeze. If you guys have heard of the gamestop stock exploding, thats an example of a short squeeze. Lets say once again I have dih company in my portfolio and its currently at $100. My friend wants to short it, so i lend him my share and he sells it at $100 and owes me one share. But instead of going down, dih company now skyrockets to $200. If my friend wishes to exit the trade now, he has to buy a share at $200 and take the $100 hit to his wallet. Him buying the share again would also drive the price up even more. But if he holds out, believing that it could go back down, dih company could rise even more (because of others covering their shorts) and he could go even deeper in debt. In this case, he could lose more money than he already has and could actually go negative.</p>
+
+    <p>Thats why short selling is very dangerous and should not be done by someone that doesnt know exactly whats happening. In the case of gamestop (ticker: $GME), hedge funds were shorting the dying company believing that it was about to go bankrupt. But people saw this as an attack on $GME, and retail investors (normal people investing in the stock market) rushed to "save" this dying heritage brand. The influx of investors made the stock jump initially, and as the people shorting rushed to cover their shorts and buy back the stocks they owe, even MORE people bought the stock. It kept going up and up and up and a few hedge funds actually went bankrupt from their short positions. Now everyone looks for the next $GME shortsqueeze but its probably never gonna happen again.</p>
+
+    <p>Takeaway: never short stocks guys there are other ways to bet on a stock falling. E.g. inverse leveraged ETFs of an underlying which we will learn about in the next lesson on derivatives. No dont worry its not calculus derivatives, derivatives just means a financial product that is correlated to an underlying stock.</p>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <span>Dhirren Viswanathan · 2026</span>
+  <span>Views are my own. Not financial advice.</span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How the Stock Market Works — Dhirren Viswanathan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #f5f0e8; --ink: #0f0d0a; --ink-muted: #4a4540; --ink-faint: #8a847a; --gold: #b8860b; --rule: #d8d0c4; --transition: 0.2s ease; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 0 40px; height: 56px; border-bottom: 1px solid var(--rule); background: var(--cream); position: sticky; top: 0; z-index: 100; }
+    .nav-name { font-size: 14px; font-weight: 500; letter-spacing: 0.02em; }
+    .nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; transition: color var(--transition); }
+    .nav-links a:hover { color: var(--ink); }
+    .article-page { max-width: 680px; margin: 0 auto; padding: 60px 40px 100px; }
+    .article-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 16px; }
+    .article-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 24px; }
+    .article-rule { height: 1px; background: var(--rule); margin: 32px 0; }
+    .article-body p { font-size: 16px; line-height: 1.85; color: #2a2520; margin-bottom: 24px; font-weight: 300; }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); margin: 40px 0 16px; }
+    .article-body strong { font-weight: 500; color: var(--ink); }
+    .footer { display: flex; justify-content: space-between; align-items: center; padding: 24px 40px; border-top: 1px solid var(--rule); font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-faint); letter-spacing: 0.04em; }
+    @media (max-width: 700px) { .navbar { padding: 0 20px; } .article-page { padding: 40px 20px 60px; } .footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px; } }
+	.article-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  margin-bottom: 0;
+}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <span class="nav-name">Dhirren Viswanathan</span>
+  <div class="nav-links">
+    <a href="../index.html">← Back to all analysis</a>
+  </div>
+</nav>
+
+<div class="article-page">
+
+  <p class="article-eyebrow">Fundamentals</p>
+  <h1 class="article-title">How the Stock Market Works</h1>
+  <p class="article-meta">29/01/2026 · 5 min read</p>
+  <div class="article-rule"></div>
+
+  <div class="article-body">
+
+    <p>lesson 1: why does this thing work? why is there money to be made, seemingly for free?</p>
+
+    <p>Stocks are just small portions of the company. So if u own 1 apple share u will technically own like 6.7^-11% of the company. When a company goes public and sells shares on the stock market, they are selling small parts of the company for a certain price. This is also known as the valuation of a company. E.g. Dih Company goes for IPO (initial public offering) with 1.5 million shares sold at 2$ each. This means that Dih Company values itself at 1.5x2=3 million dollars, and they value each share at 2$. So if they really wanted to, this company could buy back all of the 1.5 million shares at whatever price it is currently at to own 100% of itself again. By listing publicly, they let the public own some of it, hence the name initial PUBLIC offering. Another term that is commonly used is Market Capitalisation aka Market Cap or MC. this is just the valuation of the company, and its calculated as number of available shares x current market price. Back to Dih Company example, if Dih Company IPO'ed at 2$ per share but immediately after it goes public everyone wants to buy it, the price will go up. So now Dih Company shares might trade at like 5$ per share and the valuation of the company is 7.5 million dollars. Nothing actually happened, the company didnt get richer overnight, but people decided that they wanted to a piece of that pie and the market just decided that it's worth more.</p>
+
+    <h2>How prices move</h2>
+
+    <p>So how exactly does the price of a stock go up? Lets say the current market price of Dih Company (DC) is 5$. There will be many people queueing up to buy DC at 5$ per share, but I expect the price to go up very soon. So i want to get DC as soon as possible, and I offer $5.01 per share. Since this price is above the market price, its more likely that someone is willing to sell DC at $5.01 and theres a higher likelihood of me getting the stock sooner. The higher price I offer above the market price, the more likely and faster I will get the stock. So lets say someone sells DC to me at $5.01, the new market price becomes $5.01 and now people who also want to get in on the action will offer higher than $5.01. This continues and the stock price is driven up by limited supply of shares but much higher demand for shares (concept of scarcity). In the same way, the price of a stock could also go down. If i believe DC will go down, I want to sell my shares ASAP before it drops any further so I would sell it at below market price (higher likelihood of my sell order getting filled). Once that order gets filled, the market price goes down and so on.</p>
+
+    <p>Notice how for both situations, i said i BELIEVE that DC will go down or up. That is the core mechanism of markets. The entire thing is based on predictions of the future, which is why its so hard to do. No one can predict the future, but some people can make educated guesses about what might happen and why. Market prices are based on COLLECTIVE (important!) predictions of the future. So if you follow the hivemind and make decisions based on what everyone else says, usually you wont be very successful. Coming up with your own strategy and your own prediction of the future, that is DIFFERENT from everyone else's prediction, is what will really make you money. When you are right and everyone else is wrong, you win the most. This is why its different from gambling, because you can make educated guesses and defiantly say you are right. But keep in mind that short term trading is basically gambling because short term price movements are caused by randomness, emotions and noise. Do NOT chase short term quick money because it never lasts and you will lose very fast. Patience is extremely important here.</p>
+
+    <h2>Trading is a zero-sum game</h2>
+
+    <p>Trading is a zero-sum game. This means that any money u gain is money that someone else lost, and any money u lost is money someone else gained. If i sell DC @ 5$ and then it goes to 10$, someone else just made money off of my mistake.</p>
+
+    <p>For every buyer there must be a seller at the same price to facilitate a transaction, and vice versa. This is ALWAYS true and u must understand this. If the person on the other side of the trade is smarter than you, you are falling victim and ur loss is their gain. U need to know who the idiot at the poker table is, or else you will be the idiot. U need to know who the person on the other side of the trade is, which means u need to understand trading psychology and their behaviour. Thats a topic for another day tho. This is why u only make money when u have ur own strategy. If u have a differing opinion on the direction of a stock, and you make a bet based on that opinion, and ur right while the person on the other side of the trade is wrong, you will make money. So u need to know 1. How confident you are in your own opinion 2. Who has a differing opinion and what is that opinion. There are many ways to come up with your own opinion, but all of them require a lot of effort and research. Thats why its so hard to do.</p>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <span>Dhirren Viswanathan · 2026</span>
+  <span>Views are my own. Not financial advice.</span>
+</footer>
+</body>
+</html>
