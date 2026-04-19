@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2008 Financial Crisis — Dhirren Viswanathan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #f5f0e8; --ink: #0f0d0a; --ink-muted: #4a4540; --ink-faint: #8a847a; --gold: #b8860b; --rule: #d8d0c4; --transition: 0.2s ease; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 0 40px; height: 56px; border-bottom: 1px solid var(--rule); background: var(--cream); position: sticky; top: 0; z-index: 100; }
+    .nav-name { font-size: 14px; font-weight: 500; letter-spacing: 0.02em; }
+    .nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; transition: color var(--transition); }
+    .nav-links a:hover { color: var(--ink); }
+    .article-page { max-width: 680px; margin: 0 auto; padding: 60px 40px 100px; }
+    .article-eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 16px; }
+    .article-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 24px; }
+    .article-rule { height: 1px; background: var(--rule); margin: 32px 0; }
+    .article-body p { font-size: 16px; line-height: 1.85; color: #2a2520; margin-bottom: 24px; font-weight: 300; }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); margin: 40px 0 16px; }
+    .article-body strong { font-weight: 500; color: var(--ink); }
+    .footer { display: flex; justify-content: space-between; align-items: center; padding: 24px 40px; border-top: 1px solid var(--rule); font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-faint); letter-spacing: 0.04em; }
+    @media (max-width: 700px) { .navbar { padding: 0 20px; } .article-page { padding: 40px 20px 60px; } .footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px; } }
+	.article-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  margin-bottom: 0;
+}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <span class="nav-name">Dhirren Viswanathan</span>
+  <div class="nav-links">
+    <a href="../index.html">← Back to all analysis</a>
+  </div>
+</nav>
+
+<div class="article-page">
+
+  <p class="article-eyebrow">History</p>
+  <h1 class="article-title">2008 Financial Crisis</h1>
+  <p class="article-meta">14/02/2026 · 15 min read</p>
+  <div class="article-rule"></div>
+
+  <div class="article-body">
+
+    <p>main topics: 2008 crisis, Mortgage backed securities, collateralized debt obligations, defaulting on housing loans, bubbles</p>
+
+    <h2>Background: bonds</h2>
+
+    <p>Basically a way to loan your money to a company or the government and get paid interest. Kinda like a reverse bank loan but its just ur loaning to the company instead of the company loaning to u.</p>
+
+    <p>Companies have 2 ways to raise capital: 1. Sell stock in the form of equity, i.e. sell a small stake in the company. 2. Issue debt in the form of bonds.</p>
+
+    <p>We alr covered how people buy stocks, but how do people choose bonds that are worth investing in? This is the job of rating agencies, of which there are three. Standard & Poor's (S&P), Moody's, and Fitch. These three agencies played a key role in the financial crisis but thats not part of the story for now. They rate bonds on a letter scale from CCC (absolute trash) to AAA (worth investing in). All bonds rated from AAA to BBB are considered investment grade and any bond below BBB is considered a junk bond. But the tradeoff is that the junk bonds (below BBB grade) are considered High Yield (HY). This means that the interest paid from the junk bond is higher than that of an investment grade one, but there is a higher chance of default and zero interest paid. Fyi BBB grade bonds (the lowest investment grade) have a default rate of 0.28% which is already extremely low, but the CCC grade bonds are 28%.</p>
+
+    <p>Another type of bond that played a pivotal role in the crisis is mortgages, more importantly home mortgages. In 1970, the first Mortgage Backed Security (MBS) was introduced. Basically it is a bunch of mortgages packed into one, where the investor gets paid the premium from the mortgage every month or so.</p>
+
+    <h2>The CDO machine</h2>
+
+    <p>Back in the 80s, trading desks were making big bucks trading corporate bonds n they were looking for a way to increase their profits. One of their biggest customers were insurance companies, who are heavily regulated because they are vital to the main public (health insurance etc). The insurance companies that rake in so much in premiums each month need a place to invest their cash, but because of the heavy regulation they MUST only select investment grade bonds, i.e. those that are BBB and above. So here comes the issue. There just arent that many investment grade bond, but the trading desks doing corporate bonds needed a way to increase their trading volume to increase profits. So they came up with the collateralized debt obligation (CDO), in the 1980s. The CDO is considered a good investment because it consists of many different bonds, so its considered diversified. Its intended to imitate the returns of a equity index like the S&P500. Basically it means that when u invest in many companies at once, the chance that ur portfolio gets messed up is lower because the chances of one out of many companies going bankrupt is lower than the chance that one out of like two companies you own goes bankrupt.</p>
+
+    <p>The special thing about the CDO is the tranche system. Tranche is a french word that means a portion of something, so the CDO has different tranches that cater to different risk profiles. For example tranche 1 of the CDO could contain investment grade, low risk bonds that dont give a high yield but are very safe, and the riskier bonds could be packaged into tranches 2 or 3 for investors that are willing to take more risks. In this system, the people investing in tranche 1 of the CDO got paid first, and had the lowest risk of default while the other tranches were shortchanged. And the most vital part here is that the high tranches (the safer ones) were immediately rated AAA by the rating agencies, because they are considered diversified. Once this started, it took off because some companies started making CDOs of other CDOs, known as CDO squared. It gets really complicated past that so we dont have to go into it, but it is interesting if u wanna learn more go google.</p>
+
+    <p>When they started introducing CDOs of MBSs, that was like the top tier investment product because of the fact that the mortgages were chosen from different places around the world so they were considered diversified with a lower risk of the homeowner defaulting on their premium payment (Fyi premium just means the monthly payment that the homeowner must pay as part of the mortgage). So for example a CDO could consist of MBSs from Singapore and China. And if the wheat harvest during a certain time in China is horrible, the MBSs from Singapore wont be affected hence the risk is minimized.</p>
+
+    <h2>The credit default swap</h2>
+
+    <p>Now another thing got invented (yea i know its a lot of technical stuff but bear with me). The fixed income trading desks were getting even greedier and wanted to further increase their trading volume of HY bonds (the junk ones), so the solution they came up with was to find a way to guarantee the payment of the premium on the HY bonds through a form of insurance. Basically the investor would pay the trading desk a certain amount as insurance and if the HY bond ever defaulted, the trading desk would pay out the premium instead of the HY bond. This is whats known as a credit default swap (CDS). As simply put as possible, its a insurance contract on a corporate bond. But this is also where it all started to unwind. Normally, you can only buy insurance on an asset you own. Like you cant buy insurance on a house that your friend owns right. But in this case, to sell even more CDSs they decided to allow people to buy CDSs on bonds that THEY DID NOT OWN. This means that anyone could buy insurance on a corporate bond that they did not own, AND get paid out if the corporate bond defaulted. Now you might start to see why this is a horrible idea. Anyone can speculate on a corporate bond as if its a normal stock thats publicly traded.</p>
+
+    <h2>The housing bubble</h2>
+
+    <p>Now we get to the real world stuff, away from all the technical terms. Money lenders started to realise, they could loan money to literally anyone and then sell the loan off to an investment bank that would chuck it into a CDO, and in this way the money lender holds none of the risk. So they started going crazy with the number of loans they issued, basically giving loans to ANYONE. In USA the term they used was NINJA loans, No Income No Job and no Assets (Not that the people borrowing in these cases were called subprime borrowers). This means they could loan money to even the sleaziest people with no chance of actually paying the premium, but the loan issuer would just sell the loan to the investment bank and hold zero risk. By loosening their credit standards aka risk tolerance, they could generate more loans or mortgages and turn a higher profit. As a result of this, it became super easy to buy a house because you could get a loan from anyone and just go out and buy it. People that were not ordinarily able to buy a home could now buy a home with ease. And of course this led to a massive spike in demand for housing, causing prices to skyrocket.</p>
+
+    <p>Now a lot of people began speculating about the existence of a housing bubble, and a few people decided to investigate the contents of these CDOs and MBSs. They saw the massive amount of subprime loans and recognised the huge chances of default and how precarious the situation was. There was HUGE amounts of financial growth but it balanced purely on fake loans. So of course they bought CDSs because it was like buying insurance on a burning buiding. As the bubble grew and grew, homeowners started defaulting on their payments and the CDOs started unravelling, while the small hedge funds that bought the CDSs were raking in money. This is also the plot of the movie called "The big short".</p>
+
+    <h2>Conclusion</h2>
+
+    <p>Anyway thats how the 2008 financial crisis happened. A huge period of financial deregulation by president Reagan, known as "Reaganomics" and continued by president Bush led to big money getting greedy on wall street.</p>
+
+    <p>The repeal of the Glass-Steagal act under president clinton aka the citigroup act allowed a huge merger between citicorp and travelers, which resulted in a mega investment + commercial bank now known as citigroup. Glass steagall act prevented investment banks from gambling with your life savings so without it, they just got way too greedy and tripped over their own tail. They invented more and more complex financial products until they all broke down.</p>
+
+    <p>This is just one example of how volatile and risky derivatives can be. Do NOT go near them if you do not fully understand them.</p>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <span>Dhirren Viswanathan · 2026</span>
+  <span>Views are my own. Not financial advice.</span>
+</footer>
+</body>
+</html>
