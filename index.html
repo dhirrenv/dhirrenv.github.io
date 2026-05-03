@@ -4,8 +4,297 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dhirren Viswanathan — Economics & Markets</title>
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+
+    /* ============================================
+       LIGHT THEME (default)
+    ============================================ */
+    :root {
+      --bg:              #f5f0e8;
+      --bg-card:         #faf8f4;
+      --bg-raise:        #ede8de;
+      --accent:          #b8860b;
+      --accent-light:    #d4a017;
+      --accent-muted:    #ede8de;
+      --accent-faint:    #8a847a;
+      --text:            #0f0d0a;
+      --text-muted:      #4a4540;
+      --text-faint:      #8a847a;
+      --rule:            #d8d0c4;
+      --featured-bg:     #0f0d0a;
+      --featured-text:   #f5f0e8;
+      --featured-sub:    #a09890;
+      --tag-bg:          #ede8de;
+      --tag-text:        #8a847a;
+      --tag-hi-bg:       #0f0d0a;
+      --tag-hi-text:     #f5f0e8;
+      --nav-name-font:   'DM Sans', sans-serif;
+      --nav-name-color:  #0f0d0a;
+      --stat-num-font:   'Playfair Display', serif;
+      --transition:      0.25s ease;
+    }
+
+    /* ============================================
+       DARK TERMINAL THEME
+    ============================================ */
+    body[data-theme="dark"] {
+      --bg:              #0a0e0a;
+      --bg-card:         #0f140f;
+      --bg-raise:        #131a13;
+      --accent:          #00ff41;
+      --accent-light:    #00cc33;
+      --accent-muted:    #1a3a1a;
+      --accent-faint:    #4a6a4a;
+      --text:            #e8f5e8;
+      --text-muted:      #7a9a7a;
+      --text-faint:      #4a6a4a;
+      --rule:            #1a2a1a;
+      --featured-bg:     #0f140f;
+      --featured-text:   #e8f5e8;
+      --featured-sub:    #4a6a4a;
+      --tag-bg:          #131a13;
+      --tag-text:        #4a6a4a;
+      --tag-hi-bg:       #1a3a1a;
+      --tag-hi-text:     #00ff41;
+      --nav-name-font:   'DM Mono', monospace;
+      --nav-name-color:  #00ff41;
+      --stat-num-font:   'DM Mono', monospace;
+    }
+
+    /* ============================================
+       BASE
+    ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    /* ============================================
+       TOGGLE BUTTON
+    ============================================ */
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--rule);
+      color: var(--text-faint);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .toggle-icon { font-size: 13px; }
+
+    /* ============================================
+       NAVBAR
+    ============================================ */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      height: 56px;
+      border-bottom: 1px solid var(--rule);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: background var(--transition), border-color var(--transition);
+    }
+    .nav-name {
+      font-family: var(--nav-name-font);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--nav-name-color);
+      transition: color var(--transition), font-family var(--transition);
+    }
+    .nav-links { display: flex; align-items: center; gap: 20px; }
+    .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color var(--transition); }
+    .nav-links a:hover { color: var(--text); }
+    .nav-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-faint);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      transition: border-color var(--transition), color var(--transition);
+    }
+
+    /* ============================================
+       HERO
+    ============================================ */
+    .hero { border-bottom: 1px solid var(--rule); overflow: hidden; transition: border-color var(--transition); }
+    .hero-inner { max-width: 900px; margin: 0 auto; padding: 80px 40px 64px; }
+    .hero-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: color var(--transition);
+    }
+    .hero-label .blink-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent);
+      display: none;
+      transition: background var(--transition);
+    }
+    body[data-theme="dark"] .hero-label .blink-dot {
+      display: inline-block;
+      animation: blink 1.5s step-end infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .hero-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(32px, 5vw, 54px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 24px;
+      max-width: 780px;
+      transition: color var(--transition);
+    }
+    .hero-title em { font-style: italic; font-weight: 400; color: var(--text-muted); transition: color var(--transition); }
+    .hero-sub { font-size: 17px; color: var(--text-muted); max-width: 560px; line-height: 1.7; margin-bottom: 40px; font-weight: 300; transition: color var(--transition); }
+
+    .hero-stats { display: flex; align-items: center; gap: 20px; }
+    .stat { display: flex; flex-direction: column; gap: 2px; }
+    .stat-num {
+      font-family: var(--stat-num-font);
+      font-size: 20px;
+      color: var(--accent);
+      transition: color var(--transition), font-family var(--transition);
+    }
+    body[data-theme="dark"] .stat-num { font-size: 16px; }
+    .stat-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); transition: color var(--transition); }
+    .stat-divider { width: 1px; height: 32px; background: var(--rule); transition: background var(--transition); }
+
+    /* TICKER */
+    .hero-ticker { border-top: 1px solid var(--rule); padding: 12px 0; overflow: hidden; transition: border-color var(--transition); }
+    .ticker-track { display: inline-flex; animation: ticker 30s linear infinite; will-change: transform; }
+    .ticker-set { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); white-space: nowrap; display: inline-block; transition: color var(--transition); }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ============================================
+       MAIN / SECTIONS
+    ============================================ */
+    .main-content { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+    .section { padding: 60px 0; border-bottom: 1px solid var(--rule); transition: border-color var(--transition); }
+    .section:last-child { border-bottom: none; }
+    .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+    .section-label { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-faint); white-space: nowrap; transition: color var(--transition); }
+    .section-rule { flex: 1; height: 1px; background: var(--rule); transition: background var(--transition); }
+
+    /* FEATURED */
+    .featured-card {
+      display: block;
+      background: var(--featured-bg);
+      text-decoration: none;
+      padding: 48px;
+      border-radius: 4px;
+      border: 1px solid var(--accent-muted);
+      transition: border-color var(--transition), background var(--transition), opacity var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .featured-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); transition: background var(--transition); }
+    .featured-card:hover { opacity: 0.9; border-color: var(--accent); }
+    .featured-tag { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-light); margin-bottom: 20px; transition: color var(--transition); }
+    .featured-title { font-family: 'Playfair Display', serif; font-size: clamp(22px, 3vw, 32px); font-weight: 700; line-height: 1.2; color: var(--featured-text); margin-bottom: 20px; max-width: 600px; transition: color var(--transition); }
+    .featured-desc { font-size: 15px; color: var(--featured-sub); max-width: 580px; line-height: 1.75; font-weight: 300; margin-bottom: 32px; transition: color var(--transition); }
+    .featured-link { font-family: 'DM Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-light); transition: color var(--transition); }
+
+    /* ARTICLES GRID */
+    .articles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); transition: background var(--transition), border-color var(--transition); }
+    .article-card { display: block; background: var(--bg); text-decoration: none; padding: 32px; transition: background var(--transition); }
+    .article-card:hover { background: var(--bg-card); }
+    .card-meta { margin-bottom: 12px; }
+    .card-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      padding: 3px 8px;
+      border-radius: 2px;
+      border: 1px solid transparent;
+      transition: all var(--transition);
+    }
+    body[data-theme="dark"] .card-tag { border-color: var(--accent-muted); }
+    .card-tag--highlight { background: var(--tag-hi-bg); color: var(--tag-hi-text); }
+    body[data-theme="dark"] .card-tag--highlight { border-color: var(--accent-light); }
+    .card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--text); line-height: 1.3; margin-bottom: 10px; transition: color var(--transition); }
+    .card-desc { font-size: 13.5px; color: var(--text-muted); line-height: 1.65; margin-bottom: 20px; font-weight: 300; transition: color var(--transition); }
+    .card-link { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); transition: color var(--transition); }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 280px; gap: 60px; align-items: start; }
+    .about-text { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; font-weight: 300; transition: color var(--transition); }
+    .about-contact { border-left: 1px solid var(--rule); padding-left: 40px; transition: border-color var(--transition); }
+    .contact-label { font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-faint); margin-bottom: 10px; transition: color var(--transition); }
+    .contact-email {
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 12px;
+      transition: color var(--transition), border-color var(--transition);
+    }
+    .contact-email:hover { color: var(--text); }
+    .contact-note { font-size: 13px; color: var(--text-faint); line-height: 1.6; font-weight: 300; transition: color var(--transition); }
+
+    /* FOOTER */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 40px;
+      border-top: 1px solid var(--rule);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-faint);
+      letter-spacing: 0.04em;
+      transition: border-color var(--transition), color var(--transition);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .navbar { padding: 0 20px; }
+      .hero-inner { padding: 48px 20px 40px; }
+      .main-content { padding: 0 20px; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-contact { border-left: none; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 24px; }
+      .featured-card { padding: 28px; }
+      .footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -15,14 +304,21 @@
     <a href="#articles">Analysis</a>
     <a href="#about">About</a>
     <span class="nav-tag">Singapore</span>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="toggle-icon">◐</span>
+      <span class="toggle-label">Terminal</span>
+    </button>
   </div>
 </nav>
 
 <header class="hero">
   <div class="hero-inner">
-    <div class="hero-label">Independent Market Research</div>
+    <div class="hero-label">
+      <span class="blink-dot"></span>
+      Independent Market Research
+    </div>
     <h1 class="hero-title">
-      Markets are based on predictions.<br>
+      Markets are a prediction market.<br>
       <em>The edge goes to whoever thinks differently.</em>
     </h1>
     <p class="hero-sub">
@@ -39,39 +335,18 @@
   </div>
   <div class="hero-ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>MARKETS</span><span class="dot">·</span>
-      <span>MACRO</span><span class="dot">·</span>
-      <span>DERIVATIVES</span><span class="dot">·</span>
-      <span>ETFs</span><span class="dot">·</span>
-      <span>SHORT SELLING</span><span class="dot">·</span>
-      <span>FED POLICY</span><span class="dot">·</span>
-      <span>BRICS</span><span class="dot">·</span>
-      <span>GOLD STANDARD</span><span class="dot">·</span>
-      <span>2008 CRISIS</span><span class="dot">·</span>
-      <span>CAPITALISM</span><span class="dot">·</span>
-      <span>MARKETS</span><span class="dot">·</span>
-      <span>MACRO</span><span class="dot">·</span>
-      <span>DERIVATIVES</span><span class="dot">·</span>
-      <span>ETFs</span><span class="dot">·</span>
-      <span>SHORT SELLING</span><span class="dot">·</span>
-      <span>FED POLICY</span><span class="dot">·</span>
-      <span>BRICS</span><span class="dot">·</span>
-      <span>GOLD STANDARD</span><span class="dot">·</span>
-      <span>2008 CRISIS</span><span class="dot">·</span>
-      <span>CAPITALISM</span><span class="dot">·</span>
+      <span class="ticker-set">MARKETS · MACRO · DERIVATIVES · ETFs · SHORT SELLING · FED POLICY · BRICS · GOLD STANDARD · 2008 CRISIS · CAPITALISM · </span><span class="ticker-set">MARKETS · MACRO · DERIVATIVES · ETFs · SHORT SELLING · FED POLICY · BRICS · GOLD STANDARD · 2008 CRISIS · CAPITALISM · </span>
     </div>
   </div>
 </header>
 
 <main class="main-content">
 
-  <!-- FEATURED -->
   <section class="section" id="articles">
     <div class="section-header">
       <span class="section-label">Featured</span>
       <div class="section-rule"></div>
     </div>
-
     <a href="articles/macro.html" class="featured-card">
       <div class="featured-tag">Macro · Long Read</div>
       <h2 class="featured-title">Trump, the Fed, and the Coming World Order</h2>
@@ -82,82 +357,64 @@
     </a>
   </section>
 
-  <!-- ARTICLES GRID -->
   <section class="section">
     <div class="section-header">
       <span class="section-label">All Analysis</span>
       <div class="section-rule"></div>
     </div>
-
     <div class="articles-grid">
 
       <a href="articles/crisis.html" class="article-card">
-        <div class="card-meta">
-          <span class="card-tag">History</span>
-        </div>
+        <div class="card-meta"><span class="card-tag">History</span></div>
         <h3 class="card-title">2008: How Greed Engineered Its Own Collapse</h3>
         <p class="card-desc">MBS, CDOs, and the credit default swap that let anyone bet on the burning building.</p>
         <span class="card-link">Read →</span>
       </a>
 
       <a href="articles/strategy.html" class="article-card">
-        <div class="card-meta">
-          <span class="card-tag card-tag--highlight">Strategy</span>
-        </div>
+        <div class="card-meta"><span class="card-tag card-tag--highlight">Strategy</span></div>
         <h3 class="card-title">My Current Playbook: RKLB and the TACO Trade</h3>
         <p class="card-desc">A sector bet on space, a theory about Trump's negotiating pattern, and how I think about who's on the other side of my trades.</p>
         <span class="card-link">Read →</span>
       </a>
 
       <a href="articles/shorting.html" class="article-card">
-        <div class="card-meta">
-          <span class="card-tag">Mechanics</span>
-        </div>
+        <div class="card-meta"><span class="card-tag">Mechanics</span></div>
         <h3 class="card-title">Short Selling: How Hedge Funds Made $24B in 2026</h3>
         <p class="card-desc">The mechanics of going short, why software stocks were the target, and the GameStop short squeeze that broke the playbook.</p>
         <span class="card-link">Read →</span>
       </a>
 
       <a href="articles/etf.html" class="article-card">
-        <div class="card-meta">
-          <span class="card-tag">Instruments</span>
-        </div>
+        <div class="card-meta"><span class="card-tag">Instruments</span></div>
         <h3 class="card-title">ETFs: The Overlap Problem Nobody Talks About</h3>
         <p class="card-desc">SPY and QQQ look diversified. They're not. How to build a portfolio that actually hedges, and when LETFs destroy you.</p>
         <span class="card-link">Read →</span>
       </a>
 
       <a href="articles/market.html" class="article-card">
-        <div class="card-meta">
-          <span class="card-tag">Fundamentals</span>
-        </div>
+        <div class="card-meta"><span class="card-tag">Fundamentals</span></div>
         <h3 class="card-title">Why Prices Move: The Mechanics of a Stock Market</h3>
         <p class="card-desc">Every trade has two sides. Understanding who's opposite you — and why they're wrong — is where the edge lives.</p>
         <span class="card-link">Read →</span>
       </a>
 
       <a href="articles/longterm.html" class="article-card">
-        <div class="card-meta">
-          <span class="card-tag">Fundamentals</span>
-        </div>
+        <div class="card-meta"><span class="card-tag">Fundamentals</span></div>
         <h3 class="card-title">Why Stocks Go Up: The Long-Term Drivers</h3>
         <p class="card-desc">Earnings, dividends, competitive moats, and market size — the real reasons valuations rise over decades.</p>
         <span class="card-link">Read →</span>
       </a>
 
       <a href="articles/capitalism.html" class="article-card">
-        <div class="card-meta">
-          <span class="card-tag">Theory</span>
-        </div>
+        <div class="card-meta"><span class="card-tag">Theory</span></div>
         <h3 class="card-title">Capitalism, Value, and What We Lost Along the Way</h3>
         <p class="card-desc">From feudal use-value to exchange-value, and why minimum wage is the most honest form of socialist resistance inside capitalism.</p>
         <span class="card-link">Read →</span>
       </a>
 
       <a href="articles/intro.html" class="article-card">
-        <div class="card-meta">
-          <span class="card-tag">Mindset</span>
-        </div>
+        <div class="card-meta"><span class="card-tag">Mindset</span></div>
         <h3 class="card-title">Why Investing Is Hard (And Why That's the Point)</h3>
         <p class="card-desc">The poker table principle: if you don't know who the idiot is, it's you. On risk, strategy, and thinking for yourself.</p>
         <span class="card-link">Read →</span>
@@ -166,7 +423,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section class="section about-section" id="about">
     <div class="section-header">
       <span class="section-label">About</span>
@@ -195,6 +451,32 @@
   <span>Dhirren Viswanathan · 2026</span>
   <span>Views are my own. Not financial advice.</span>
 </footer>
+
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const label  = toggle.querySelector('.toggle-label');
+  const body   = document.body;
+
+  // Load saved preference
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    body.dataset.theme = 'dark';
+    label.textContent = 'Classic';
+  }
+
+  toggle.addEventListener('click', () => {
+    const isDark = body.dataset.theme === 'dark';
+    if (isDark) {
+      delete body.dataset.theme;
+      label.textContent = 'Terminal';
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.dataset.theme = 'dark';
+      label.textContent = 'Classic';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+</script>
 
 </body>
 </html>
